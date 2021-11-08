@@ -1,3 +1,12 @@
-<div class="container">
-  <h5><%= @message %></h5>
-</div>
+<% if @included == false %>
+  <h3><%= @word %> cant be build from:</h3>
+    <ul class="inline-list">
+      <% @letters.each do |letter| %>
+        <li><%= letter %></li>
+      <% end %>
+    </ul>
+<% elsif @check_word_exist == false %>
+   <h3><%= @word %> is not an english word..</h3>
+<% else %>
+   <h3><strong>Congratulations!</strong> <%= @word %> is a valid word!</h3>
+<% end %>
